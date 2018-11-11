@@ -8,7 +8,8 @@ import Sequences
 maxOf2TestCases
   = [ (1, 2) ==> 2,
       (2, 1) ==> 2,
-      (2, 2) ==> 2
+      (2, 2) ==> 2,
+      (-3, 4) ==> 4
     ]
 
 maxOf3TestCases
