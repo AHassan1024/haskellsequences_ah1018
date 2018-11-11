@@ -10,38 +10,40 @@ maxOf2 x1 x2
     | otherwise = x2
 
 maxOf3 :: Int -> Int -> Int -> Int
+-- Returns the largest of three Ints
 maxOf3 x y z
     = maxOf2 (maxOf2 x y) z
--- Returns the largest of three Ints
+
 
 isADigit :: Char -> Bool
-isADigit c
-    = c `elem` ['0'..'9']
 -- Returns True if the character represents a digit '0'..'9';
 -- False otherwise
+isADigit c
+    = c `elem` ['0'..'9']
 
--- False otherwise
 isAlpha :: Char -> Bool
+-- Returns True if the character represents an alphabetic
+-- character either in the range 'a'..'z' or in the range 'A'..'Z';
+-- False otherwise
 isAlpha c
     = c `elem` ['a'..'z'] 
       || c `elem` ['A'..'Z']
--- Returns True if the character represents an alphabetic
--- character either in the range 'a'..'z' or in the range 'A'..'Z';
 
 digitToInt :: Char -> Int
-digitToInt c
--- Precondiditon: the character is one of '0'..'9'
-    = ord c - ord '0'
 -- Returns the integer [0..9] corresponding to the given character.
 -- Note: this is a simpler version of digitToInt in module Data.Char,
 -- which does not assume the precondition.
+-- Precondiditon: the character is one of '0'..'9'
+digitToInt c
+    = ord c - ord '0'
 
 toUpper :: Char -> Char
+-- Returns the upper case character corresponding to the input.
+-- Uses guards by way of variety.
 toUpper c
     | c `elem` ['a'..'z'] = chr(ord c - (ord 'a' - ord 'A'))
     | otherwise           = error "You have not entered a character."
--- Returns the upper case character corresponding to the input.
--- Uses guards by way of variety.
+
 
 --
 -- Sequences and series
